@@ -1,13 +1,14 @@
-// Global Variables
+//setup
+size(1024, 768);
+String title= "Wahoo!";
+PFont titleFont;
+String[] fontList = PFont.list(); //To list all fonts available on system
+println("start");
+printArray(fontList);
+titleFont = createFont ("Microsoft Sans Serif", 55);
+color red = #ED2626;
 
-void setup() {
-  size(1024, 768); //fullScreen(), displayWidth & displayHeight
-}
-
-void draw() {}//End draw()
-
-void keyPressed () { // Review KeyBoard Input
-}//End keyPressed()
-
-void mousePressed() { // Review mouseX and mouseY Key Variables and curser position input
-}//End mousePressed()m
+//drawing
+rect(width*1/4, height*0, width*1/2, height*1/10);
+fill(red);
+textAlign (CENTER, CENTER);

@@ -12,3 +12,7 @@ color red = #ED2626;
 rect(width*1/4, height*0, width*1/2, height*1/10);
 fill(red);
 textAlign (CENTER, CENTER);
+textFont(titleFont, 55);
+text(title, width*1/4, height*0, width*1/2, height*1/10);
+// coler reset
+fill(255);

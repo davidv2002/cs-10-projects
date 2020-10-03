@@ -1,3 +1,8 @@
+/*
+  CS10 Q1 Processing Java project 1, Happy face with measles
+ By David Verbeek, davidv2002 on github
+ Note the width of the canves must be greater than or equal to the height
+ */
 // Global Variables
 // face
 int faceX, faceY, faceDiameter;
@@ -26,9 +31,16 @@ float magicFace;
 // end of global Variables
 
 void setup() {
-  size(1024, 768);
+  size(768, 768);
   //fullScreen();
-  println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
+  /* canves size safety.
+   the drawing code will break if the canves is wider than it is tall.
+   */
+  if (height > width) {
+    println("the width of the canves must be greater than or equal to the height");
+    println("width is", width, "and height is", height);
+    exit();
+  }
   // variables
   population();
   //set background color
@@ -72,7 +84,7 @@ void draw() {
   // reset strokeWeight after mouth
   strokeWeight(reset);
   // remove unwanted
-  fill(reset);
+  fill(black);
   maskRight.thing();
   maskLeft.thing();
   // button
@@ -80,7 +92,7 @@ void draw() {
   if (mouseY<buttonHeight && mouseY>buttonY && mouseX<width && mouseX>buttonX) {
     buttonColor = silver;
   } else {
-    buttonColor = red;
+    buttonColor = black;
   } 
   // button draw
   fill(buttonColor);

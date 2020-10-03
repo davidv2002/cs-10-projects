@@ -1,15 +1,17 @@
 void population () {
-  faceX = width / 2;
-  faceY = height / 2;
+  faceX = width/2;
+  faceY = height/2;
   faceDiameter = height;
   // left eye variables
   leftEyeX = width * 3/8;
   leftEyeY = height * 1/4;
-  leftEyeDiameter = height / 7;
+  leftEyeDiameter = height/7;
+  leftIrisDiameter = leftEyeDiameter/3;
   // right eye variables
   rightEyeX = width * 5/8;
   rightEyeY = leftEyeY;
   rightEyeDiameter = leftEyeDiameter;
+  rightIrisDiameter = rightEyeDiameter/3;
   // nose
   // top point
   noseX1 = faceX;
@@ -31,12 +33,12 @@ void population () {
   // reset
   reset = 1;
   // offset
-  offset = (width - height)/2;
+  offSet = (width - height)/2;
   // button
-  buttonX = width*15/16;
-  buttonY = height*0/14;
-  buttonWidth = width*1/16;
-  buttonHeight = height*1/14;
+  buttonX = width * 15/16;
+  buttonY = height * 0/14;
+  buttonWidth = width * 1/16;
+  buttonHeight = height * 1/14;
   // color
   red = #ED2626;
   silver = #D8D0D0;
@@ -44,6 +46,7 @@ void population () {
   white = 255;
   colorReset = white;
   xRed = #F0A0A0;
+  black = reset;
   // text
   xButton= "X";
   // font

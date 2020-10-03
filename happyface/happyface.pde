@@ -31,7 +31,7 @@ float magicFace;
 // end of global Variables
 
 void setup() {
-  size(768, 768);
+  size(1024, 768);
   //fullScreen();
   /* canves size safety.
    the drawing code will break if the canves is wider than it is tall.

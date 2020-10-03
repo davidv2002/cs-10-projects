@@ -6,17 +6,18 @@ int leftEyeX, leftEyeY, leftEyeDiameter, leftIrisDiameter;
 // right eye
 int rightEyeX, rightEyeY, rightEyeDiameter, rightIrisDiameter;
 // nose
-int noseX1, noseX2, noseX3, noseY1, noseY2, noseY3;
+int noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 // mouth
-int mouthX1, mouthY1, mouthX2, mouthY2, mouthThick;
+int mouthThick, mouthX1, mouthY1, mouthX2, mouthY2;
 // button
 int buttonX, buttonY, buttonWidth, buttonHeight;
 // color
-color buttonColour, red, silver, measlesColor, white, colorReset, xRed, black;
+color red, silver, measlesColor, white, colorReset, xRed, black, buttonColor;
 // measles
 float measlesX, measlesY, measlesDiameter;
 // text
 String xButton;
+// font
 PFont titleFont;
 // other
 int reset, offSet;
@@ -77,12 +78,12 @@ void draw() {
   // button
   // button Hoverover
   if (mouseY<buttonHeight && mouseY>buttonY && mouseX<width && mouseX>buttonX) {
-    buttonColour = silver;
+    buttonColor = silver;
   } else {
-    buttonColour = red;
+    buttonColor = red;
   } 
   // button draw
-  fill(buttonColour);
+  fill(buttonColor);
   rect(buttonX, buttonY, buttonWidth, buttonHeight);
   // x on button
   fill(xRed);

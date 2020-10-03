@@ -30,10 +30,6 @@ void population () {
   // right point
   mouthX2 = rightEyeX;
   mouthY2 = mouthY1;
-  // reset
-  reset = 1;
-  // offset
-  offSet = (width - height)/2;
   // button
   buttonX = width * 15/16;
   buttonY = height * 0/14;
@@ -51,6 +47,9 @@ void population () {
   xButton= "X";
   // font
   titleFont = createFont ("Microsoft Sans Serif", 55);
+  // other
+  reset = 1;
+  offSet = (width - height)/2;
   // magic
   magicFace = 1.55;
 };

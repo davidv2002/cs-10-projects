@@ -19,13 +19,14 @@ float measlesX, measlesY, measlesDiameter;
 String x;
 PFont titleFont;
 // other
-int reset;
-int offset;
+int reset, offset;
+// magic
+float magic_face;
 //end of global Variables
 
 void setup() {
-  size(1024, 768);
-  // fullScreen();
+  //size(1024, 768);
+  fullScreen();
   println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
   // variables
   population();
@@ -37,26 +38,26 @@ void setup() {
 
 // class for the edge mask
 class Mask { 
-  int outsideX; 
+  int outSideX; 
   float cPointX;
-  Mask(int outsideX_1, float cPointX_1) {
-    outsideX = outsideX_1;
+  Mask(int outSideX_1, float cPointX_1) {
+    outSideX = outSideX_1;
     cPointX = cPointX_1;
   };
   void thing() { 
     beginShape();
-    vertex(outsideX, 0);
+    vertex(outSideX, 0);
     vertex( width/2, 0);
     bezierVertex(cPointX, 0, cPointX, height, width/2, height);
     vertex(width/2, height);
-    vertex(outsideX, height);
-    vertex(outsideX, 0);
+    vertex(outSideX, height);
+    vertex(outSideX, 0);
     endShape();
   };
 }
-Mask maskLeft = new Mask(0, (width/2)-(height/2)+(height/2*0.33));
-Mask maskRight = new Mask(width, (width/2)+(height/2)-(height/2*0.33));
 void draw() {
+  Mask maskRight = new Mask(width, (width/2)+(height/magic_face));
+  Mask maskLeft = new Mask(0, (width/2)-(height/magic_face));
   // drawing the face
   // measles
   // random part
@@ -80,8 +81,8 @@ void draw() {
   strokeWeight(reset);
   // remove unwanted
   // if it worked
-  fill(silver);
-  //maskRight.thing();
+  fill(reset);
+  maskRight.thing();
   maskLeft.thing();
   // button
   // button Hoverover

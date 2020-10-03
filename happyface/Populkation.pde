@@ -48,4 +48,6 @@ void population () {
   x= "X";
   // font
   titleFont = createFont ("Microsoft Sans Serif", 55);
+  // magic
+  magic_face = 1.55;
 };

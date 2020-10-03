@@ -32,7 +32,7 @@ void setup() {
   // variables
   population();
   //set background color
-  background(0, 255, 0);
+  background(black);
   // face
   ellipse(faceX, faceY, faceDiameter, faceDiameter);
 }// end setup

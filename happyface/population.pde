@@ -6,12 +6,12 @@ void population () {
   leftEyeX = width * 3/8;
   leftEyeY = height * 1/4;
   leftEyeDiameter = height/7;
-  leftIrisDiameter = leftEyeDiameter/3;
+  leftPupilDiameter = leftEyeDiameter/3;
   // right eye variables
   rightEyeX = width * 5/8;
   rightEyeY = leftEyeY;
   rightEyeDiameter = leftEyeDiameter;
-  rightIrisDiameter = rightEyeDiameter/3;
+  rightPupilDiameter = rightEyeDiameter/3;
   // nose
   // top point
   noseX1 = faceX;

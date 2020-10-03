@@ -2,9 +2,9 @@
 // face
 int faceX, faceY, faceDiameter;
 // left eye
-int leftEyeX, leftEyeY, leftEyeDiameter, leftIrisDiameter;
+int leftEyeX, leftEyeY, leftEyeDiameter, leftPupilDiameter;
 // right eye
-int rightEyeX, rightEyeY, rightEyeDiameter, rightIrisDiameter;
+int rightEyeX, rightEyeY, rightEyeDiameter, rightPupilDiameter;
 // nose
 int noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 // mouth
@@ -52,16 +52,16 @@ void draw() {
   fill(colorReset);
   // left eye
   ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
-  // iris
+  // pupil
   fill(black);
-  ellipse(leftEyeX, leftEyeY, leftIrisDiameter, leftIrisDiameter);
+  ellipse(leftEyeX, leftEyeY, leftPupilDiameter, leftPupilDiameter);
   // reset color
   fill(colorReset);
   // right eye
   ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
-  // iris
+  // pupil
   fill(black);
-  ellipse(rightEyeX, rightEyeY, rightIrisDiameter, rightIrisDiameter);
+  ellipse(rightEyeX, rightEyeY, rightPupilDiameter, rightPupilDiameter);
   // reset color
   fill(colorReset);
   // nose

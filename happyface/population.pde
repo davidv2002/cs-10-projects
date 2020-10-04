@@ -1,55 +1,55 @@
-void population () {
+void Population () {
+  // face base variables
   faceX = width/2;
   faceY = height/2;
   faceDiameter = height;
+  // common eye variables
+  eyeY = height * 1/4;
+  eyeDiameter = height/7;
+  pupilDiameter = eyeDiameter/3;
   // left eye variables
   leftEyeX = width * 3/8;
-  leftEyeY = height * 1/4;
-  leftEyeDiameter = height/7;
-  leftPupilDiameter = leftEyeDiameter/3;
   // right eye variables
   rightEyeX = width * 5/8;
-  rightEyeY = leftEyeY;
-  rightEyeDiameter = leftEyeDiameter;
-  rightPupilDiameter = rightEyeDiameter/3;
-  // nose
-  // top point
-  noseX1 = faceX;
-  noseY1 = height * 3/8;
-  // left point
-  noseX2 = width * 7/16;
-  noseY2 = height * 9/16;
-  // right point
-  noseX3 = width * 9/16;
-  noseY3 = noseY2;
-  // mouth
-  mouthThick = 7;
-  // left point
-  mouthX1 = leftEyeX;
-  mouthY1 = height * 3/4;
-  // right point
-  mouthX2 = rightEyeX;
-  mouthY2 = mouthY1;
-  // button
-  buttonX = width * 15/16;
-  buttonY = height * 0/14;
-  buttonWidth = width * 1/16;
-  buttonHeight = height * 1/14;
-  // color
+  // nose variables
+  // top point variables
+  noseTopX = faceX;
+  noseTopY = height * 3/8;
+  // bottom point variables
+  noseLeftX = width * 7/16;
+  noseRightX = width * 9/16;
+  noseBottomY = height * 9/16;
+  // mouth variables
+  mouthThickness = height/100;
+  mouthLeftX = leftEyeX;
+  mouthRightX = rightEyeX;
+  mouthY = height * 3/4;
+  // exit button variables
+  exitButtonX = width * 15/16;
+  exitButtonY = 0;
+  exitButtonWidth = width * 1/16;
+  exitButtonHeight = height * 1/14;
+  // color variables
   red = #ED2626;
-  silver = #D8D0D0;
-  measlesColor = red;
+  black = 0;
   white = 255;
-  colorReset = white;
-  xRed = #F0A0A0;
-  black = reset;
-  // text
-  xButton= "X";
-  // font
-  titleFont = createFont ("Microsoft Sans Serif", 55);
-  // other
+  exitButtonXColor = #9B5454;
+  measleColor = red;
+  resetColor = white;
+  // measles variables
+  measleDiameterLow = height * 1/80;
+  measleDiameterHigh = height * 1/40;
+  // text variables
+  xForExitButton = "X";
+  // font variables
+  fontSize = width * 1/35;
+  exitButtonFont = createFont ("Microsoft Sans Serif", 55);
+  // other variables
   reset = 1;
-  offSet = (width - height)/2;
-  // magic
+  offset = (width - height)/2;
+  halfWidth = width/2;
+  // magic variables
   magicFace = 1.55;
+  magicFaceLeft = (halfWidth) - (height/magicFace);
+  magicFaceRight = (halfWidth) + (height/magicFace);
 };

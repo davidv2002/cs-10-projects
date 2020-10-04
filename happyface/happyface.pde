@@ -3,7 +3,7 @@
  Happy face with measles
  By David Verbeek, davidv2002 on github
  last edited 20201003
- Note the width of the canves must be greater than or equal to the height or the draw code will not work
+ Note the width of the canvas must be greater than or equal to the height or the draw code will not work
  */
 // global variables
 // face base variables

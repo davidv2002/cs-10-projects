@@ -2,7 +2,7 @@
  CS10 Q1 Processing Java project 1
  Happy face with measles
  By David Verbeek, davidv2002 on github
- last edited 20201004
+ last edited 20201005
  Note the width of the canvas must be greater than 
  or equal to the height otherwise draw code will not work
  */
@@ -80,11 +80,11 @@ void draw() {
   measleDiameter = random(measleDiameterLow, measleDiameterHigh);
   // draw
   if ( RGB == true) {
-  // rgb
-  fill(R, G, B);
+    // rgb
+    fill(R, G, B);
   } else {
-  // red
-  fill(measleColor);
+    // red
+    fill(measleColor);
   }
   ellipse(measleX, measleY, measleDiameter, measleDiameter);
   // reset color

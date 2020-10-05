@@ -7,8 +7,10 @@
  or equal to the height otherwise draw code will not work
  */
 // global variables
+// control booleans
+boolean RGB;
 // variables for constants
-int zero, one, two, sixteen;
+int zero, one, two, sixteen, bitMax;
 // variables for commonly used ratios
 int offset, halfWidth, halfHeight;
 // face base variables
@@ -30,6 +32,8 @@ color red, black, white, exitButtonXColor, measleColor, resetColor, exitButtonCo
 // measles variables
 int measleXLow, measleXHigh, measleDiameterLow, measleDiameterHigh;
 float measleX, measleY, measleDiameter;
+// RGB
+int R, G, B;
 // text variables
 String xForExitButton;
 // font variables
@@ -66,12 +70,22 @@ void draw() {
   Mask maskLeft = new Mask(zero, magicFaceLeft);
   Mask maskRight = new Mask(width, magicFaceRight);
   // measles
+  // RGB
+  R = round(random(bitMax));
+  G = round(random(bitMax));
+  B = round(random(bitMax));
   // random
   measleX = random(measleXLow, measleXHigh);
   measleY = random(zero, height);
   measleDiameter = random(measleDiameterLow, measleDiameterHigh);
   // draw
+  if ( RGB == true) {
+  // rgb
+  fill(R, G, B);
+  } else {
+  // red
   fill(measleColor);
+  }
   ellipse(measleX, measleY, measleDiameter, measleDiameter);
   // reset color
   fill(resetColor);

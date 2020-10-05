@@ -1,10 +1,13 @@
 //variables for days
 void Population () {
+  // control booleans
+  RGB = true;
   //variables for constants
   zero = 0;
   one = 1;
   two = 2;
   sixteen = 16;
+  bitMax = 255;
   // variables for commonly used ratios
   offset = (width - height)/two;
   halfWidth = width/two;
@@ -42,7 +45,7 @@ void Population () {
   // color variables
   red = #ED2626;
   black = zero;
-  white = 255;
+  white = bitMax;
   exitButtonXColor = #9B5454;
   measleColor = red;
   resetColor = white;

@@ -70,11 +70,11 @@ void draw() {
   // do the class thing here to fix problems with null being used for height and width
   Mask maskLeft = new Mask(zero, magicFaceLeft);
   Mask maskRight = new Mask(width, magicFaceRight);
-  // measles
   // RGB
   R = round(random(bitMax));
   G = round(random(bitMax));
   B = round(random(bitMax));
+  // measles
   // random
   measleX = random(measleXLow, measleXHigh);
   measleY = random(zero, height);

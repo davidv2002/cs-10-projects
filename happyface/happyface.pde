@@ -6,6 +6,10 @@
  Note the width of the canvas must be greater than or equal to the height or the draw code will not work
  */
 // global variables
+// variables for constants
+int zero, one, two, sixteen;
+// variables for commonly used ratios
+int offset, halfWidth, halfHeight;
 // face base variables
 int faceX, faceY, faceDiameter;
 // common eye variables
@@ -23,18 +27,17 @@ int exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight;
 // color variables
 color red, black, white, exitButtonXColor, measleColor, resetColor, exitButtonColor;
 // measles variables
-int measleDiameterLow, measleDiameterHigh;
+int measleXLow, measleXHigh, measleDiameterLow, measleDiameterHigh;
 float measleX, measleY, measleDiameter;
 // text variables
 String xForExitButton;
 // font variables
 int fontSize;
 PFont exitButtonFont;
-// other variables
-int reset, offset;
-float halfWidth;
 // magic variables
 float magicFace, magicFaceLeft, magicFaceRight;
+// other
+int reset;
 // end of global variables
 
 void setup() {
@@ -48,7 +51,7 @@ void setup() {
     println("the width is", width, "and the height is", height);
     exit();
   }
-  // load variables
+  // load variables for days
   Population();
   // set background color
   background(black);
@@ -58,19 +61,19 @@ void setup() {
 
 void draw() {
   // do the class thing here to fix problems with null being used for height and width
-  Mask maskLeft = new Mask(0, magicFaceLeft);
+  Mask maskLeft = new Mask(zero, magicFaceLeft);
   Mask maskRight = new Mask(width, magicFaceRight);
   // measles
   // random
-  measleX = random(height)+offset;
-  measleY = random(height);
+  measleX = random(measleXLow, measleXHigh);
+  measleY = random(zero, height);
   measleDiameter = random(measleDiameterLow, measleDiameterHigh);
   // draw
   fill(measleColor);
   ellipse(measleX, measleY, measleDiameter, measleDiameter);
   // reset color
   fill(resetColor);
-  // remove unwanted
+  // remove unwanted with the magic masks
   maskLeft.magic();
   maskRight.magic();
   // drawing the face
@@ -144,13 +147,13 @@ class Mask {
   void magic() {
     fill(black);
     beginShape();
-    vertex(outsideX, 0);
-    vertex(halfWidth, 0);
+    vertex(outsideX, zero);
+    vertex(halfWidth, zero);
     // the magic of the mask
-    bezierVertex(controlPointX, 0, controlPointX, height, halfWidth, height);
+    bezierVertex(controlPointX, zero, controlPointX, height, halfWidth, height);
     vertex(halfWidth, height);
     vertex(outsideX, height);
-    vertex(outsideX, 0);
+    vertex(outsideX, zero);
     endShape();
     // reset color
     fill(resetColor);

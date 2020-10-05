@@ -3,7 +3,8 @@
  Happy face with measles
  By David Verbeek, davidv2002 on github
  last edited 20201003
- Note the width of the canvas must be greater than or equal to the height or the draw code will not work
+ Note the width of the canvas must be greater than 
+ or equal to the height otherwise draw code will not work
  */
 // global variables
 // variables for constants
@@ -36,7 +37,7 @@ int fontSize;
 PFont exitButtonFont;
 // magic variables
 float magicFace, magicFaceLeft, magicFaceRight;
-// other
+// other variables
 int reset;
 // end of global variables
 
@@ -57,7 +58,8 @@ void setup() {
   background(black);
   // draw base of the face
   ellipse(faceX, faceY, faceDiameter, faceDiameter);
-}// end setup
+  // end of setup
+}
 
 void draw() {
   // do the class thing here to fix problems with null being used for height and width
@@ -117,17 +119,10 @@ void draw() {
   text(xForExitButton, exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight);
   // reset color
   fill(resetColor);
-  // end draw
+  // end of draw
 }
 
-/*
-void keyPressed () {
- if (key == 'q' || key == 'Q') {
- exit();
- }
- }
- */
-
+// exit button mouse handler
 void mousePressed() {
   if (mouseX>exitButtonX && mouseY>exitButtonY && mouseX<width && mouseY<exitButtonHeight) {
     exit();

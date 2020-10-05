@@ -60,6 +60,6 @@ void Population () {
   magicFace = 1.55;
   magicFaceLeft = (halfWidth) - (height/magicFace);
   magicFaceRight = (halfWidth) + (height/magicFace);
-  // other
+  // other variables
   reset = one;
 };

@@ -48,6 +48,7 @@ int reset;
 void setup() {
   size(1024, 768);
   //fullScreen();
+  println("start of console");
   /* canves size safety.
    the drawing code will break if the canves is taller than it is wide.
    */

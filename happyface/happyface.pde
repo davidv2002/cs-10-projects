@@ -71,9 +71,9 @@ void draw() {
   Mask maskLeft = new Mask(zero, magicFaceLeft);
   Mask maskRight = new Mask(width, magicFaceRight);
   // RGB
-  R = round(random(bitMax));
-  G = round(random(bitMax));
-  B = round(random(bitMax));
+  R = round(random(zero, bitMax));
+  G = round(random(zero, bitMax));
+  B = round(random(zero, bitMax));
   // measles
   // random
   measleX = random(measleXLow, measleXHigh);

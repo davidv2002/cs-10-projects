@@ -1,7 +1,7 @@
 //variables for days
 void Population () {
   // control booleans
-  RGB = true;
+  RGB = false;
   //variables for constants
   zero = 0;
   one = 1;
@@ -65,10 +65,10 @@ void Population () {
   magicFaceRight = (halfWidth) + (height/magicFace);
   // blinking variables
   blinkCount = zero;
-  blinkFrame = 10;
-  blinkFrameLow = 60;
-  blinkFrameHigh = 180;
-  blinkTimeReset = 10;
+  blinkFrame = zero;
+  blinkFrameLow = round(frameRate);
+  blinkFrameHigh = blinkFrameLow * 3;
+  blinkTimeReset = blinkFrameLow/6;
   blinkTime = blinkTimeReset;
   // closed eye variables
   leftEyeLeftX = leftEyeX - height/15; 

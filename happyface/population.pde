@@ -2,6 +2,7 @@
 void Population () {
   // control booleans
   rave = true;
+  unwell = true;
   //variables for constants
   zero = 0;
   one = 1;

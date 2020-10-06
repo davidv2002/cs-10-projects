@@ -8,7 +8,7 @@
  */
 // Global Variables
 // control booleans
-boolean rave;
+boolean rave, unwell;
 // variables for constants
 int zero, one, two, sixteen, bitMax;
 // variables for commonly used ratios
@@ -93,18 +93,22 @@ void draw() {
     // red
     fill(measleColor);
   }
+  if (unwell == true) {
   ellipse(measleX, measleY, measleDiameter, measleDiameter);
   // reset color
   fill(resetColor);
   // remove unwanted with the magic masks
   maskLeft.magic();
   maskRight.magic();
+  };
   // drawing the face
   // creepy blinking eyes
   Eyes();
   // nose
   if ( rave == true) {
     fill(raveColor);
+  }else{
+    fill(resetColor);
   }
   triangle(noseTopX, noseTopY, noseLeftX, noseBottomY, noseRightX, noseBottomY);
   fill(resetColor);
@@ -191,7 +195,8 @@ void Eyes () {
       fill(raveColor);
       stroke(raveColor);
     } else {
-      stroke(white);
+      fill(resetColor);
+      stroke(resetColor);
     };
     // block out open eyes
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
@@ -216,6 +221,8 @@ void Eyes () {
     if ( rave == true) {
       // rgb
       fill(raveColor);
+    }else{
+      fill(resetColor);
     }
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
     ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);

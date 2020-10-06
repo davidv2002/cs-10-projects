@@ -8,7 +8,7 @@
  */
 // Global Variables
 // control booleans
-boolean RGB;
+boolean rave;
 // variables for constants
 int zero, one, two, sixteen, bitMax;
 // variables for commonly used ratios
@@ -28,7 +28,7 @@ int mouthLeftX, mouthRightX, mouthY;
 // exit button variables
 int exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight;
 // color variables
-color red, black, white, exitButtonXColor, measleColor, resetColor, exitButtonColor;
+color red, black, white, exitButtonXColor, measleColor, resetColor, exitButtonColor, raveColor;
 // measles variables
 int measleXLow, measleXHigh, measleDiameterLow, measleDiameterHigh;
 float measleX, measleY, measleDiameter;
@@ -60,7 +60,7 @@ void setup() {
   if (height>width) {
     println("the width of the canvas must be greater than or equal to the height");
     println("the width is", width, "and the height is", height);
-    exit();
+    //exit();
   }
   // load variables for days
   Population();
@@ -79,15 +79,16 @@ void draw() {
   R = round(random(zero, bitMax));
   G = round(random(zero, bitMax));
   B = round(random(zero, bitMax));
+  raveColor = color(R, B, G);
   // measles
   // random
   measleX = random(measleXLow, measleXHigh);
   measleY = random(zero, height);
   measleDiameter = random(measleDiameterLow, measleDiameterHigh);
   // draw
-  if ( RGB == true) {
+  if ( rave == true) {
     // rgb
-    fill(R, G, B);
+    fill(raveColor);
   } else {
     // red
     fill(measleColor);
@@ -102,11 +103,19 @@ void draw() {
   // creepy blinking eyes
   Eyes();
   // nose
+  if ( rave == true) {
+    fill(raveColor);
+  }
   triangle(noseTopX, noseTopY, noseLeftX, noseBottomY, noseRightX, noseBottomY);
+  fill(resetColor);
   // mouth
   strokeWeight(thickness);
+  if ( rave == true) {
+    stroke(raveColor);
+  }
   line(mouthLeftX, mouthY, mouthRightX, mouthY);
   // reset stroke weight after mouth
+  stroke(black);
   strokeWeight(reset);
   // button
   // button hoverover
@@ -162,6 +171,7 @@ class Mask {
     fill(resetColor);
   };
 }
+
 // blinking eyes function
 void Eyes () {
   if (blinkTime == zero) {
@@ -176,7 +186,13 @@ void Eyes () {
     // to fully cover open eye
     strokeWeight(two);
     // stroke to block out open eye
-    stroke(white);
+    if ( rave == true) {
+      // rgb
+      fill(raveColor);
+      stroke(raveColor);
+    } else {
+      stroke(white);
+    };
     // block out open eyes
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
     ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
@@ -196,17 +212,17 @@ void Eyes () {
   } else {
     // not blinking
     // draw eyes like normal
-    // left eye
+    // eyes
+    if ( rave == true) {
+      // rgb
+      fill(raveColor);
+    }
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
-    // pupil
+    ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
+    fill(resetColor);
+    // pupils
     fill(black);
     ellipse(leftEyeX, eyeY, pupilDiameter, pupilDiameter);
-    // reset color
-    fill(resetColor);
-    // right eye
-    ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
-    // pupil
-    fill(black);
     ellipse(rightEyeX, eyeY, pupilDiameter, pupilDiameter);
     // reset color
     fill(resetColor);

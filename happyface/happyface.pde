@@ -6,13 +6,13 @@
  Note the width of the canvas must be greater than 
  or equal to the height otherwise draw code will not work
  */
-// global variables
+// Global Variables
 // control booleans
 boolean RGB;
 // variables for constants
 int zero, one, two, sixteen, bitMax;
 // variables for commonly used ratios
-int offset, halfWidth, halfHeight;
+int offset, halfWidth, halfHeight, thickness;
 // face base variables
 int faceX, faceY, faceDiameter;
 // common eye variables
@@ -24,7 +24,7 @@ int rightEyeX;
 // nose variables
 int noseTopX, noseTopY, noseLeftX, noseRightX, noseBottomY;
 // mouth variables
-int mouthThickness, mouthLeftX, mouthRightX, mouthY;
+int mouthLeftX, mouthRightX, mouthY;
 // exit button variables
 int exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight;
 // color variables
@@ -41,6 +41,10 @@ int fontSize;
 PFont exitButtonFont;
 // magic variables
 float magicFace, magicFaceLeft, magicFaceRight;
+// blinking variables
+int blinkCount, blinkFrame, blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime;
+// closed eye variables
+int leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX;
 // other variables
 int reset;
 // end of global variables
@@ -48,6 +52,7 @@ int reset;
 void setup() {
   size(1024, 768);
   //fullScreen();
+  frameRate(60);
   println("start of console");
   /* canves size safety.
    the drawing code will break if the canves is taller than it is wide.
@@ -94,24 +99,12 @@ void draw() {
   maskLeft.magic();
   maskRight.magic();
   // drawing the face
-  // left eye
-  ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
-  // pupil
-  fill(black);
-  ellipse(leftEyeX, eyeY, pupilDiameter, pupilDiameter);
-  // reset color
-  fill(resetColor);
-  // right eye
-  ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
-  // pupil
-  fill(black);
-  ellipse(rightEyeX, eyeY, pupilDiameter, pupilDiameter);
-  // reset color
-  fill(resetColor);
+  // creepy blinking eyes
+  Eyes();
   // nose
   triangle(noseTopX, noseTopY, noseLeftX, noseBottomY, noseRightX, noseBottomY);
   // mouth
-  strokeWeight(mouthThickness);
+  strokeWeight(thickness);
   line(mouthLeftX, mouthY, mouthRightX, mouthY);
   // reset stroke weight after mouth
   strokeWeight(reset);
@@ -169,3 +162,55 @@ class Mask {
     fill(resetColor);
   };
 }
+// blinking eyes function
+void Eyes () {
+  if (blinkTime == zero) {
+    // stop blinking
+    blinkCount = zero;
+    blinkTime = blinkTimeReset;
+    blinkFrame = round(random(blinkFrameLow, blinkFrameHigh));
+    println("new blink frame is", blinkFrame);
+  } else if (blinkCount == blinkFrame) {
+    // blinking
+    println("blink");
+    // to fully cover open eye
+    strokeWeight(two);
+    // stroke to block out open eye
+    stroke(white);
+    // block out open eyes
+    ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
+    ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
+    // reset stroke
+    stroke(black);
+    // closed eye thickness
+    strokeWeight(thickness);
+    // draw colsed eye lines
+    // left eye line
+    line(leftEyeLeftX, eyeY, leftEyeRightX, eyeY);
+    // right eye line
+    line(rightEyeLeftX, eyeY, rightEyeRightX, eyeY);
+    // reset stroke weight
+    strokeWeight(reset);
+    blinkTime--;
+    println("frames left is", blinkTime);
+  } else {
+    // not blinking
+    // draw eyes like normal
+    // left eye
+    ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
+    // pupil
+    fill(black);
+    ellipse(leftEyeX, eyeY, pupilDiameter, pupilDiameter);
+    // reset color
+    fill(resetColor);
+    // right eye
+    ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
+    // pupil
+    fill(black);
+    ellipse(rightEyeX, eyeY, pupilDiameter, pupilDiameter);
+    // reset color
+    fill(resetColor);
+    blinkCount++;
+    println(" frame count is", blinkCount);
+  };
+};

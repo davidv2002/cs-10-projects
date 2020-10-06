@@ -4,7 +4,7 @@ boolean RGB;
 // variables for constants
 int zero, one, two, sixteen, bitMax;
 // variables for commonly used ratios
-int offset, halfWidth, halfHeight;
+int offset, halfWidth, halfHeight, Thickness;
 // face base variables
 int faceX, faceY, faceDiameter;
 // common eye variables
@@ -16,7 +16,7 @@ int rightEyeX;
 // nose variables
 int noseTopX, noseTopY, noseLeftX, noseRightX, noseBottomY;
 // mouth variables
-int mouthThickness, mouthLeftX, mouthRightX, mouthY;
+int mouthLeftX, mouthRightX, mouthY;
 // exit button variables
 int exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight;
 // color variables
@@ -33,12 +33,12 @@ int fontSize;
 PFont exitButtonFont;
 // magic variables
 float magicFace, magicFaceLeft, magicFaceRight;
+// blinking variables
+int blinkCount, blinkFrame, blinkTime;
 // other variables
 int reset;
 // end of global variables
 
-// testing variables
-int blinkCount, blinkFrame, blinkTime;
 
 
 void setup() {
@@ -67,23 +67,31 @@ void draw() {
   //new
   Eyes();
 }
+
+
 void Eyes () {
   println(" frame count is", blinkCount);
   println(" frames left is", blinkTime);
   if (blinkTime == 0) {
     blinkCount = 0;
-    blinkTime = 5;
+    blinkTime = 10;
     blinkFrame = round(random(60, 180));
     println("new blink frame is", blinkFrame);
   } else if (blinkCount >= blinkFrame) {
     println("blink");
+    strokeWeight(2);
     stroke(white);
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
     ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
     stroke(black);
+    strokeWeight(Thickness);
+    //left eye line
+    line(leftEyeX-height/15, eyeY, leftEyeX+height/15, eyeY);
+    //right eye line
+    line(rightEyeX-height/15, eyeY, rightEyeX+height/15, eyeY);
+    strokeWeight(reset);
     blinkTime--;
   } else {
-    //old
     // left eye
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
     // pupil
@@ -98,8 +106,6 @@ void Eyes () {
     ellipse(rightEyeX, eyeY, pupilDiameter, pupilDiameter);
     // reset color
     fill(resetColor);
-    // end of eye code
-    //new
     blinkCount++;
   };
 };

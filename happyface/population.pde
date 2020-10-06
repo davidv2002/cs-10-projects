@@ -12,6 +12,7 @@ void Population () {
   offset = (width - height)/two;
   halfWidth = width/two;
   halfHeight = height/two;
+  thickness = height/100;
   // face base variables
   faceX = halfWidth;
   faceY = halfHeight;
@@ -33,7 +34,6 @@ void Population () {
   noseRightX = width * 9/sixteen;
   noseBottomY = height * 9/sixteen;
   // mouth variables
-  mouthThickness = height/100;
   mouthLeftX = leftEyeX;
   mouthRightX = rightEyeX;
   mouthY = height * 12/sixteen;
@@ -63,6 +63,18 @@ void Population () {
   magicFace = 1.55;
   magicFaceLeft = (halfWidth) - (height/magicFace);
   magicFaceRight = (halfWidth) + (height/magicFace);
+  // blinking variables
+  blinkCount = zero;
+  blinkFrame = 10;
+  blinkFrameLow = 60;
+  blinkFrameHigh = 180;
+  blinkTimeReset = 10;
+  blinkTime = blinkTimeReset;
+  // closed eye variables
+  leftEyeLeftX = leftEyeX - height/15; 
+  leftEyeRightX = leftEyeX + height/15; 
+  rightEyeLeftX = rightEyeX - height/15; 
+  rightEyeRightX = rightEyeX + height/15;
   // other variables
   reset = one;
 };

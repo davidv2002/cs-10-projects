@@ -12,6 +12,7 @@ void Population () {
   offset = (width - height)/two;
   halfWidth = width/two;
   halfHeight = height/two;
+  thickness = height/100;
   // face base variables
   faceX = halfWidth;
   faceY = halfHeight;
@@ -33,7 +34,6 @@ void Population () {
   noseRightX = width * 9/sixteen;
   noseBottomY = height * 9/sixteen;
   // mouth variables
-  mouthThickness = height/100;
   mouthLeftX = leftEyeX;
   mouthRightX = rightEyeX;
   mouthY = height * 12/sixteen;

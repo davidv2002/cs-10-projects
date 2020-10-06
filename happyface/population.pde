@@ -1,7 +1,7 @@
 //variables for days
 void Population () {
   // control booleans
-  RGB = false;
+  RGB = true;
   //variables for constants
   zero = 0;
   one = 1;

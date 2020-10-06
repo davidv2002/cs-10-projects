@@ -125,11 +125,11 @@ void draw() {
   // button hoverover
   if (mouseX>exitButtonX && mouseY>exitButtonY && mouseX<width && mouseY<exitButtonHeight) {
     exitButtonColor = white;
+    fill(exitButtonColor);
   } else {
-    exitButtonColor = black;
-  } 
+    noFill();
+  }
   // draw exit button
-  fill(exitButtonColor);
   rect(exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight);
   // reset color
   fill(resetColor);
@@ -137,8 +137,10 @@ void draw() {
   fill(exitButtonXColor);
   textAlign(CENTER, CENTER);
   textFont(exitButtonFont, fontSize);
+  
   text(xForExitButton, exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight);
   // reset color
+  stroke(black);
   fill(resetColor);
   // end of draw
 }
@@ -161,7 +163,11 @@ class Mask {
   };
   // fill and shape code
   void magic() {
-    fill(black);
+    if (rave == true) {
+      fill(raveColor);
+    } else {
+      fill(black);
+    }
     beginShape();
     vertex(outsideX, zero);
     vertex(halfWidth, zero);

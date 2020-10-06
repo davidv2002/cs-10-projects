@@ -2,7 +2,7 @@
  CS10 Q1 Processing Java project 1
  Happy face with measles
  By David Verbeek, davidv2002 on github
- last edited 20201005
+ last edited 20201006
  Note the width of the canvas must be greater than 
  or equal to the height otherwise draw code will not work
  */
@@ -94,12 +94,12 @@ void draw() {
     fill(measleColor);
   }
   if (unwell == true) {
-  ellipse(measleX, measleY, measleDiameter, measleDiameter);
-  // reset color
-  fill(resetColor);
-  // remove unwanted with the magic masks
-  maskLeft.magic();
-  maskRight.magic();
+    ellipse(measleX, measleY, measleDiameter, measleDiameter);
+    // reset color
+    fill(resetColor);
+    // remove unwanted with the magic masks
+    maskLeft.magic();
+    maskRight.magic();
   };
   // drawing the face
   // creepy blinking eyes
@@ -107,7 +107,7 @@ void draw() {
   // nose
   if ( rave == true) {
     fill(raveColor);
-  }else{
+  } else {
     fill(resetColor);
   }
   triangle(noseTopX, noseTopY, noseLeftX, noseBottomY, noseRightX, noseBottomY);
@@ -221,7 +221,7 @@ void Eyes () {
     if ( rave == true) {
       // rgb
       fill(raveColor);
-    }else{
+    } else {
       fill(resetColor);
     }
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);

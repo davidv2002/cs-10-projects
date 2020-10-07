@@ -4,10 +4,10 @@ float imageStartWidth, imageStartHeight, imageWidth, imageHeight,imageWidthRatio
 
 
 void setup() {
-  size(768, 768); //fullScreen(), displayWidth & displayHeight
+  size(1024, 768); //fullScreen(), displayWidth & displayHeight
   pic = loadImage("pic_from_bc.JPG"); // dimensions: width 700, height 467
-  imageWidthRatio = 700.0/700.0;
-  imageHeightRatio = 467.0/700.0;
+  imageWidthRatio = 700.0/700.0; // needs to have .0 for float
+  imageHeightRatio = 467.0/700.0; // needs to have .0 for float
   println("imageWidthRatio",imageWidthRatio);
   println("imageHeightRatio",imageHeightRatio);
   imageStartWidth = width * 0;
@@ -21,7 +21,7 @@ void setup() {
 }
 
 void draw() {
-  //fill(255);
+  fill(255);
   rect(imageStartWidth, imageStartHeight, imageWidth, imageHeight);
   image(pic, imageStartWidth, imageStartHeight, imageWidth, imageHeight);
 }//End draw()

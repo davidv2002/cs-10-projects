@@ -6,9 +6,9 @@ float imageStartWidth, imageStartHeight, imageWidth, imageHeight, imageHeightRat
 
 void setup() {
   size(768, 768); //fullScreen(), displayWidth & displayHeight
-  pic = loadImage("https://davidv2002.github.io/Images/pic%20from%20bc.JPG"); // dimensions: width 3888, height 2592
-  imageWidthRatio = 3888/3888;
-  imageHeightRatio = 2592/3888;
+  pic = loadImage(""); // dimensions: width 3888, height 2592
+  imageWidthRatio = 700/700;
+  imageHeightRatio = 467/700;
   imageStartWidth = width * 0;
   imageStartHeight = height * 0 ;
   imageWidth = width * imageWidthRatio; // aspect ratio
@@ -18,7 +18,7 @@ void setup() {
 void draw() {
   //fill(255);
   rect(imageStartWidth, imageStartHeight, imageWidth, imageHeight);
-  image(pic, imageStartWidth, imageStartHeight);
+  image(pic, imageStartWidth, imageStartHeight, imageWidth, imageHeight);
 }//End draw()
 
 void keyPressed () { // Review KeyBoard Input

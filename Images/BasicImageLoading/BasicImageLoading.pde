@@ -1,13 +1,12 @@
 // Global Variables
 PImage pic;
-int imageWidthRatio; 
-float imageStartWidth, imageStartHeight, imageWidth, imageHeight, imageHeightRatio;
+float imageStartWidth, imageStartHeight, imageWidth, imageHeight,imageWidthRatio, imageHeightRatio;
 
 
 void setup() {
   size(768, 768); //fullScreen(), displayWidth & displayHeight
   pic = loadImage("pic_from_bc.JPG"); // dimensions: width 700, height 467
-  imageWidthRatio = 700/700;
+  imageWidthRatio = 700.0/700.0;
   imageHeightRatio = 467.0/700.0;
   println("imageWidthRatio",imageWidthRatio);
   println("imageHeightRatio",imageHeightRatio);

@@ -6,6 +6,7 @@ float xDif, yDif;
 
 void setup() {
   orientation(LANDSCAPE);
+  fullScreen();
   gesture = new KetaiGesture(this);
 }
 

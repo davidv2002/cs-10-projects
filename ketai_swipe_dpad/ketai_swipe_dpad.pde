@@ -8,6 +8,7 @@ void setup() {
   orientation(LANDSCAPE);
   fullScreen();
   gesture = new KetaiGesture(this);
+  background(#7F7F7F);
 }
 
 void draw() {
@@ -29,7 +30,7 @@ void onFlick( float x, float y, float px, float py, float v) {
       background(#0000ff);
       println("up");
     } else {
-      background(#000000);
+      background(#FFFFFF);
       println("down");
     }
   }

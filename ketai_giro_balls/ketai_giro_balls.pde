@@ -18,7 +18,7 @@ void setup() {
   orientation(LANDSCAPE);
   sensor = new KetaiSensor(this);
   sensor.start();
-  circleSize = width/100;
+  circleSize = width/25;
   b1.start();
   b2.start();
   b3.start();

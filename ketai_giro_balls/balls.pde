@@ -1,11 +1,12 @@
 class Balls {
- float startX, startY, intX, intY, intMulty;
+ float startX, startY, intX, intY, intMulty, intSize;
  color thing;
-  Balls (float xs, float ys, float multy, color ball) {
+  Balls (float xs, float ys, float multy, color ball, float sizeThing) {
     startX = xs;
     startY = ys;
     intMulty = multy;
     thing = ball;
+    intSize = sizeThing;
   }
   void start() {
     intY = startY;
@@ -14,19 +15,19 @@ class Balls {
   void thing() {
     intX = intX+(xStore*intMulty);
     intY = intY+(yStore*intMulty);
-    if (intY < circleSize) { 
-      intY = circleSize;
+    if (intY < intSize) { 
+      intY = intSize;
     }
-    if (intX < circleSize) { 
-      intX = circleSize;
+    if (intX < intSize) { 
+      intX = intSize;
     }
-    if (intY > height-circleSize) { 
-      intY = height-circleSize;
+    if (intY > height-intSize) { 
+      intY = height-intSize;
     }
-    if (intX > width-circleSize) { 
-      intX = width-circleSize;
+    if (intX > width-intSize) { 
+      intX = width-intSize;
     }
     fill(thing);
-    circle(intX, intY, circleSize);
+    circle(intX, intY, intSize*2);
   }
 }

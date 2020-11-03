@@ -18,6 +18,8 @@ Shapes s7 = new Shapes(470, 26, 0.25, 15, #FFFFFF);
 void setup() {
   fullScreen();
   orientation(LANDSCAPE);
+  rectMode(RADIUS);
+  noStroke();
   sensor = new KetaiSensor(this);
   sensor.start();
   s0.start();
@@ -28,7 +30,6 @@ void setup() {
   s5.start();
   s6.start();
   s7.start();
-  noStroke();
 }
 
 void draw() {

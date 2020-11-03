@@ -38,7 +38,7 @@ class Shapes {
   void cube() {
     cubeX = (cubeX+xStore*intMulty);
     cubeY = (cubeY+yStore*intMulty);
-    
+
     if (cubeY < intSize/2) { 
       cubeY = intSize/2;
     }
@@ -52,8 +52,7 @@ class Shapes {
       cubeX = width-intSize/2;
     }
     fill(intColor);
-    rectMode(RADIUS);
-    square(cubeX, cubeY, intSize);
+    rect(cubeX, cubeY, intSize, intSize, 15);
   }
 
   void all() {

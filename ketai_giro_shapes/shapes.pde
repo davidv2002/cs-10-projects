@@ -50,4 +50,9 @@ class Shapes {
     rectMode(RADIUS);
     square(width-intX, height-intY, intSize);
   }
+
+  void all() {
+    ball();
+    cube();
+  }
 }

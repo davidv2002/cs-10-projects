@@ -36,8 +36,9 @@ class Shapes {
   }
 
   void cube() {
-    cubeX = cubeX+(xStore*intMulty);
-    cubeY = cubeY+(yStore*intMulty);
+    cubeX = (cubeX+xStore*intMulty);
+    cubeY = (cubeY+yStore*intMulty);
+    
     if (cubeY < intSize/2) { 
       cubeY = intSize/2;
     }

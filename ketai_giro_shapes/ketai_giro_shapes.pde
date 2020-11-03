@@ -2,17 +2,17 @@ import ketai.sensors.*;
 
 // global variables
 KetaiSensor sensor;
-// 0.5 1.0 3.5 7.0 12.0 14.0 20.0
 float xStore, yStore;
-// starting x, starting y, speed multyplyer, color, ball size
-Shapes s0 = new Shapes(174, 645, 20.0, #000000, 180);
-Shapes s1 = new Shapes(430, 376, 14.0, #0000FF, 140);
-Shapes s2 = new Shapes(126, 254, 12.0, #00FF00, 110);
-Shapes s3 = new Shapes(220, 95, 7.0, #00FFFF, 90);
-Shapes s4 = new Shapes(350, 50, 3.5, #FF0000, 60);
-Shapes s5 = new Shapes(230, 136, 1.0, #FF00FF, 45);
-Shapes s6 = new Shapes(45, 120, 0.5, #FFFF00, 30);
-Shapes s7 = new Shapes(470, 26, 0.25, #FFFFFF, 15);
+
+// starting x, starting y, speed multyplyer, ball size, color
+Shapes s0 = new Shapes(174, 645, 20.0, 180, #000000);
+Shapes s1 = new Shapes(430, 376, 14.0, 140, #0000FF);
+Shapes s2 = new Shapes(126, 254, 12.0, 110, #00FF00);
+Shapes s3 = new Shapes(220, 95, 7.0, 90, #00FFFF);
+Shapes s4 = new Shapes(350, 50, 3.5, 60, #FF0000);
+Shapes s5 = new Shapes(230, 136, 1.0, 45, #FF00FF);
+Shapes s6 = new Shapes(45, 120, 0.5, 30, #FFFF00);
+Shapes s7 = new Shapes(470, 26, 0.25, 15, #FFFFFF);
 
 
 void setup() {

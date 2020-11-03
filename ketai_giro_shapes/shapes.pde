@@ -1,58 +1,62 @@
 class Shapes {
-  float startX, startY, intX, intY, intMulty, intSize;
-  color thing;
-  Shapes (float xs, float ys, float multy, color intColor, float sizeThing) {
-    startX = xs;
-    startY = ys;
+  float startX, startY, intMulty, intSize, ballX, ballY, cubeX, cubeY;
+  color intColor;
+  Shapes (float startingX, float startingY, float multy, float sizeThing, color fillColor) {
+    startX = startingX;
+    startY = startingY;
     intMulty = multy;
-    thing = intColor;
+    intColor = fillColor;
     intSize = sizeThing;
   }
+
   void start() {
-    intY = startY;
-    intX = startX;
+    ballY = startY;
+    ballX = startX;
+    cubeY = startY;
+    cubeX = startX;
   }
+
   void ball() {
-    intX = intX+(xStore*intMulty);
-    intY = intY+(yStore*intMulty);
-    if (intY < intSize) { 
-      intY = intSize;
+    ballX = ballX+(xStore*intMulty);
+    ballY = ballY+(yStore*intMulty);
+    if (ballY < intSize) { 
+      ballY = height-intSize;
     }
-    if (intX < intSize) { 
-      intX = intSize;
+    if (ballX < intSize) { 
+      ballX = width-intSize;
     }
-    if (intY > height-intSize) { 
-      intY = height-intSize;
+    if (ballY > height-intSize) { 
+      ballY = intSize;
     }
-    if (intX > width-intSize) { 
-      intX = width-intSize;
+    if (ballX > width-intSize) { 
+      ballX = intSize;
     }
-    fill(thing);
-    circle(intX, intY, intSize*2);
+    fill(intColor);
+    circle(ballX, ballY, intSize*2);
   }
 
   void cube() {
-    intX = intX+(xStore*intMulty);
-    intY = intY+(yStore*intMulty);
-    if (intY < intSize/2) { 
-      intY = intSize/2;
+    cubeX = cubeX+(xStore*intMulty);
+    cubeY = cubeY+(yStore*intMulty);
+    if (cubeY < intSize/2) { 
+      cubeY = intSize/2;
     }
-    if (intX < intSize/2) { 
-      intX = intSize/2;
+    if (cubeX < intSize/2) { 
+      cubeX = intSize/2;
     }
-    if (intY > height-intSize/2) { 
-      intY = height-intSize/2;
+    if (cubeY > height-intSize/2) { 
+      cubeY = height-intSize/2;
     }
-    if (intX > width-intSize/2) { 
-      intX = width-intSize/2;
+    if (cubeX > width-intSize/2) { 
+      cubeX = width-intSize/2;
     }
-    fill(thing);
+    fill(intColor);
     rectMode(RADIUS);
-    square(width-intX, height-intY, intSize);
+    square(cubeX, cubeY, intSize);
   }
 
   void all() {
-    ball();
     cube();
+    ball();
   }
 }

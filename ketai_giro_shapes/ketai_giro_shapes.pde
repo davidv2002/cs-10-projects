@@ -33,7 +33,7 @@ void setup() {
 }
 
 void draw() {
-  if (frameCount  % 2 == 0) {
+  if (frameCount%2 == 0) {
     background(#7f7f7f);
   }
   s0.all();

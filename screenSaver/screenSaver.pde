@@ -9,6 +9,6 @@ void draw() {
     fill(random(96, 224), random(96, 224), random(96, 224));
     strokeWeight(random(10, 25));
     stroke(random(96, 224), random(96, 224), random(96, 224));
-    circle(random(width), random(height), random(200, 600));
+    ellipse(random(width), random(height), random(200, 600), random(200, 600));
   }
 }

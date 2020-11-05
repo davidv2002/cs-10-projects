@@ -6,9 +6,9 @@ void draw() {
   background(random(256), random(256), random(256));
   int ohGodNO = round(random(10, 30));
   for (int pleaseNO = 0; pleaseNO < ohGodNO; pleaseNO++) {
-    fill(random(96, 224), random(96, 224), random(96, 224));
-    strokeWeight(random(10, 25));
-    stroke(random(96, 224), random(96, 224), random(96, 224));
-    ellipse(random(width), random(height), random(200, 600), random(200, 600));
+    fill(random(96, 192), random(96, 192), random(96, 192));
+    strokeWeight(random(5, 50));
+    stroke(random(192, 256), random(192, 256), random(192, 256));
+    ellipse(random(width), random(height), random(60, 600), random(60, 600));
   }
 }

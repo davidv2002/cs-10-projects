@@ -4,7 +4,7 @@ import ketai.sensors.*;
 KetaiSensor sensor;
 float xStore, yStore;
 
-// starting x, starting y, speed multyplyer, ball size, color
+// starting x, starting y, speed multyplyer, size, color
 Shapes s0 = new Shapes(174, 645, 20.0, 180, #000000);
 Shapes s1 = new Shapes(430, 376, 14.0, 140, #0000FF);
 Shapes s2 = new Shapes(126, 254, 12.0, 110, #00FF00);

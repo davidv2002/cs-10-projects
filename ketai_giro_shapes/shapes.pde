@@ -2,11 +2,11 @@ class Shapes {
   float startX, startY, intMulty, intSize, ballX, ballY, cubeX, cubeY;
   color intColor;
   Shapes (float startingX, float startingY, float multy, float sizeThing, color fillColor) {
-    startX = startingX;
-    startY = startingY;
-    intMulty = multy;
+    startX = (startingX * width);
+    startY = (startingY * height);
+    intMulty = (multy * (width / 1920.0));
     intColor = fillColor;
-    intSize = sizeThing;
+    intSize = ((sizeThing * 45) * (width / 1920.0));
   }
 
   void start() {
@@ -52,7 +52,7 @@ class Shapes {
       cubeX = width-intSize/2;
     }
     fill(intColor);
-    rect(cubeX, cubeY, intSize, intSize, 15);
+    rect(cubeX, cubeY, intSize, intSize);
   }
 
   void all() {

@@ -4,22 +4,14 @@ import ketai.sensors.*;
 KetaiSensor sensor;
 float xStore, yStore;
 
-// starting x, starting y, speed multyplyer, size, color
-Shapes s0 = new Shapes(174, 645, 20.0, 180, #000000);
-Shapes s1 = new Shapes(430, 376, 14.0, 140, #0000FF);
-Shapes s2 = new Shapes(126, 254, 12.0, 110, #00FF00);
-Shapes s3 = new Shapes(220, 95, 7.0, 90, #00FFFF);
-Shapes s4 = new Shapes(350, 50, 3.5, 60, #FF0000);
-Shapes s5 = new Shapes(230, 136, 1.0, 45, #FF00FF);
-Shapes s6 = new Shapes(45, 120, 0.5, 30, #FFFF00);
-Shapes s7 = new Shapes(470, 26, 0.25, 15, #FFFFFF);
-
+Shapes s0, s1, s2, s3, s4, s5, s6, s7;
 
 void setup() {
   fullScreen();
   orientation(LANDSCAPE);
   rectMode(RADIUS);
   noStroke();
+  popultaion();
   sensor = new KetaiSensor(this);
   sensor.start();
   s0.start();
@@ -30,6 +22,18 @@ void setup() {
   s5.start();
   s6.start();
   s7.start();
+}
+
+void popultaion() {
+  // starting x percent, starting y percent, speed multyplyer, size, color
+  s0 = new Shapes(0.50, 0.78, 20.0, 4, #000000);
+  s1 = new Shapes(0.63, 0.35, 14.0, 3.11, #0000FF);
+  s2 = new Shapes(0.23, 0.97, 12.0, 2.44, #00FF00);
+  s3 = new Shapes(0.46, 0.15, 7.0, 2.00, #00FFFF);
+  s4 = new Shapes(0.69, 0.74, 3.5, 1.33, #FF0000);
+  s5 = new Shapes(0.48, 0.14, 1.0, 1.00, #FF00FF);
+  s6 = new Shapes(0.82, 0.47, 0.5, 0.67, #FFFF00);
+  s7 = new Shapes(0.26, 0.59, 0.25, 0.33, #FFFFFF);
 }
 
 void draw() {
@@ -45,7 +49,6 @@ void draw() {
   s6.all();
   s7.all();
 }
-
 
 // left is -y
 // right is +y

@@ -6,7 +6,7 @@ class Shapes {
     startY = (startingY * height);
     intMulty = (multy * (width / 1920.0));
     intColor = fillColor;
-    intSize = ((sizeThing * 45) * (width / 1920.0));
+    intSize = (floor(sizeThing * 45) * (width / 1920.0));
   }
 
   void start() {

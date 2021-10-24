@@ -39,20 +39,20 @@ class Shapes {
     cubeX = (cubeX+xStore*intMulty);
     cubeY = (cubeY+yStore*intMulty);
 
-    if (cubeY < intSize/2) { 
-      cubeY = intSize/2;
+    if (cubeY < intSize) { 
+      cubeY = intSize;
     }
-    if (cubeX < intSize/2) { 
-      cubeX = intSize/2;
+    if (cubeX < intSize) { 
+      cubeX = intSize;
     }
-    if (cubeY > height-intSize/2) { 
-      cubeY = height-intSize/2;
+    if (cubeY > height-intSize) { 
+      cubeY = height-intSize;
     }
-    if (cubeX > width-intSize/2) { 
-      cubeX = width-intSize/2;
+    if (cubeX > width-intSize) { 
+      cubeX = width-intSize;
     }
     fill(intColor);
-    rect(cubeX, cubeY, intSize, intSize);
+    square(cubeX, cubeY, intSize);
   }
 
   void tick() {

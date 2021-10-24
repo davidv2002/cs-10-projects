@@ -9,7 +9,7 @@ class Shapes {
     intSize = (floor(sizeThing * 45) * (width / 1920.0));
   }
 
-  void start() {
+  void prep() {
     ballY = startY;
     ballX = startX;
     cubeY = startY;
@@ -55,7 +55,7 @@ class Shapes {
     rect(cubeX, cubeY, intSize, intSize);
   }
 
-  void all() {
+  void tick() {
     cube();
     ball();
   }

@@ -14,28 +14,14 @@ void setup() {
   popultaion();
   sensor = new KetaiSensor(this);
   sensor.start();
-  s0.start();
-  s1.start();
-  s2.start();
-  s3.start();
-  s4.start();
-  s5.start();
-  s6.start();
-  s7.start();
+  startUp();
 }
 
 void draw() {
   if (frameCount%2 == 0) {
     background(#7f7f7f);
   }
-  s0.all();
-  s1.all();
-  s2.all();
-  s3.all();
-  s4.all();
-  s5.all();
-  s6.all();
-  s7.all();
+  tickAll();
 }
 
 // left is -y

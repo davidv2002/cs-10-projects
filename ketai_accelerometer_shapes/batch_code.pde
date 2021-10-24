@@ -9,3 +9,25 @@ void popultaion() {
   s6 = new Shapes(0.82, 0.47, 0.5, 0.67, #FFFF00);
   s7 = new Shapes(0.26, 0.59, 0.25, 0.33, #FFFFFF);
 }
+
+void startUp() {
+  s0.prep();
+  s1.prep();
+  s2.prep();
+  s3.prep();
+  s4.prep();
+  s5.prep();
+  s6.prep();
+  s7.prep();
+}
+
+void tickAll() {
+  s0.tick();
+  s1.tick();
+  s2.tick();
+  s3.tick();
+  s4.tick();
+  s5.tick();
+  s6.tick();
+  s7.tick();
+}
